@@ -4,28 +4,28 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body ng-controller = "madLibController as mlCtrl">
-		{{mlCtrl.count}}
 		<form>
-			<input type="text" ng-model="mlCtrl.userWords.nouns">
-			<input type="text" ng-model="mlCtrl.userWords.verbs">
-			<input type="text" ng-model="mlCtrl.userWords.adjectives">
-			<input type="text" ng-model="mlCtrl.userWords.adverbs">
+			<span>Nouns:</span><input type="text" ng-model="mlCtrl.userWords.nouns">
+			<span>Verbs:</span><input type="text" ng-model="mlCtrl.userWords.verbs">
+			<span>Adjectives:</span><input type="text" ng-model="mlCtrl.userWords.adjectives">
+			<span>Adverbs:</span><input type="text" ng-model="mlCtrl.userWords.adverbs">
 			<select ng-model="mlCtrl.selectedStory">
 				<option value="christmasStory">Christmas Story</option>
 				<option>Some Story</option>
 			</select>
-			<input type="submit" value="Submit" ng-click="mlCtrl.addWords(mlCtrl.userWords)">
+			<input type="submit" value="Submit" ng-click="mlCtrl.addWords()">
 		</form>
 		
 		<div>
 			<p ng-show = "mlCtrl.selectedStory === 'christmasStory'">
-				Every Christmas we {{mlCtrl.userWords.verbs[0]}} to a {{mlCtrl.userWords.adjectives[0]}} tree farm far away. This is not just any   (Adjectives)   tree farm. My dad and I    (Verb)   onto the   (noun)   to    (Verb)   for the perfect   (noun)  .  Some people like them   (Adjectives)  , but I prefer them   (Adjectives)  . After  searching for hours I usually   (adverb)   exclaim "Dad! The perfect tree is over   there!" Off we    (Verb)   to get the tree. The problem is we always forget the  (noun)   and the  (noun)  . But at the end of the day we    (adverb)   get the tree and head home    (adverb)  . "I wish it was Christmas all year round"  I    (adverb)   think to myself.
+				Every Christmas we {{mlCtrl.final.verbs[0]}} to a {{mlCtrl.final.adjectives[0]}} tree farm far away. This is not just any   {{mlCtrl.final.adjectives[1]}}   tree farm. My dad and I {{mlCtrl.final.verbs[1]}} onto the   {{mlCtrl.final.nouns[0]}} to {{mlCtrl.final.verbs[2]}}   for the perfect   {{mlCtrl.final.nouns[1]}}.  Some people like them {{mlCtrl.final.adjectives[2]}}, but I prefer them   {{mlCtrl.final.adjectives[3]}}. After  searching for hours I usually   {{mlCtrl.final.adverbs[0]}}   exclaim "Dad! The perfect tree is over   there!" Off we    {{mlCtrl.final.verbs[3]}} to get the tree. The problem is we always forget the  {{mlCtrl.final.nouns[2]}} and the {{mlCtrl.final.nouns[3]}}. But at the end of the day we    {{mlCtrl.final.adverbs[2]}} get the tree and head home {{mlCtrl.final.adverbs[1]}}. "I wish it was Christmas all year round"  I    {{mlCtrl.final.adverbs[3]}} think to myself.
 			</p>
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/defaultWords.js"></script>
+		<script src="js/addWords.js"></script>
 		<script src="js/controller.js"></script>
 	</body>
 </html>
